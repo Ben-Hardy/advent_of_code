@@ -4,6 +4,8 @@ instructions = f.read().split("\n")[:-1]
 distance = 0
 depth = 0
 
+# fairly straightforward. we just have to go through each instruction and 
+# update distance or depth accordingly
 for instruction in instructions:
 	inst_chunks = instruction.split(" ")
 
