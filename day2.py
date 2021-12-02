@@ -5,14 +5,14 @@ distance = 0
 depth = 0
 
 for instruction in instructions:
-	chunks = instruction.split(" ")
+	inst_chunks = instruction.split(" ")
 
-	if chunks[0] == "forward":
-		distance += int(chunks[1])
-	elif chunks[0] == "down":
-		depth += int(chunks[1])
-	elif chunks[0] == "up":
-		depth -= int(chunks[1])
+	if inst_chunks[0] == "forward":
+		distance += int(inst_chunks[1])
+	elif inst_chunks[0] == "down":
+		depth += int(inst_chunks[1])
+	elif inst_chunks[0] == "up":
+		depth -= int(inst_chunks[1])
 
 print(f"{distance} {depth}")
 print(f"{distance * depth}")

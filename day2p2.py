@@ -6,15 +6,16 @@ depth = 0
 aim = 0
 
 for instruction in instructions:
-	chunks = instruction.split(" ")
-
-	if chunks[0] == "forward":
-		distance += int(chunks[1])
-		depth += int(chunks[1]) * aim
-	elif chunks[0] == "down":
-		aim += int(chunks[1])
-	elif chunks[0] == "up":
-		aim -= int(chunks[1])
+	inst_chunks = instruction.split(" ")
+	inst_value = int(inst_chunks[1])
+	
+	if inst_chunks[0] == "forward":
+		distance += inst_value
+		depth += inst_value * aim
+	elif inst_chunks[0] == "down":
+		aim += inst_value
+	elif inst_chunks[0] == "up":
+		aim -= inst_value
 
 print(f"{distance} {depth} {aim}")
 print(f"{distance * depth}")
