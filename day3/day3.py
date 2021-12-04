@@ -12,7 +12,6 @@ for num in nums:
 		if num[i] == '1':
 			col_counts[i] += 1
 
-
 gamma = []
 epsilon = []
 
@@ -59,8 +58,6 @@ while len(ox_rating) != 1:
 
 	cur_col += 1
 
-print(ox_rating)
-
 cur_col = 0
 
 while len(co2_rating) != 1:
@@ -74,12 +71,8 @@ while len(co2_rating) != 1:
 
 	cur_col += 1
 
-print(co2_rating)
-
-
 co2_rating_int = int(co2_rating[0],2)
 ox_rating_int = int(ox_rating[0], 2)
-print(co2_rating_int)
-print(ox_rating_int)
+
 print(co2_rating_int * ox_rating_int)
 
