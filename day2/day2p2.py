@@ -1,6 +1,8 @@
 f = open("day2_input.txt", "r")
 
 instructions = f.read().split("\n")[:-1]
+f.close()
+
 distance = 0
 depth = 0
 aim = 0

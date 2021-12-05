@@ -89,7 +89,6 @@ class TestBingo(unittest.TestCase):
 		b = Bingo([[1,2,3,4,5], [6,7,8,9,10], [11,12,13,14,15], [16,17,18,19,20], [21,22,23,24,25]])
 		b.assess_called_value(13)
 		assert_equal(1, b.mask[2,2])
-		#print(b.mask)
 		
 		b.assess_called_value(8)
 		b.assess_called_value(3)

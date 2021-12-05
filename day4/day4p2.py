@@ -44,7 +44,3 @@ with open("input.txt", "r") as f:
 			break
 	
 	print(bingo_cards[worst_board].calculate_score(winning_num))
-	
-	
-
-
