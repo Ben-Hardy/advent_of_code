@@ -1,1 +1,4 @@
 .DS_Store
+.vscode/
+day4/.idea/
+day4/__pycache__/
