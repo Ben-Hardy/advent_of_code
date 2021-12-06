@@ -1,4 +1,3 @@
-
 # our bingo class from part 1 will still be fine for this
 from day4 import Bingo
 
