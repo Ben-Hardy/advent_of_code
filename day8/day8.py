@@ -2,8 +2,6 @@ with open("input.txt") as f:
 	lines = [i.split(' | ') for i in f.read().split('\n')[:-1]]
 	outputs = [i[1] for i in lines]
 
-	print(outputs)
-
 	numbers_total = 0
 
 	for i in outputs:
