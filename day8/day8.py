@@ -1,5 +1,3 @@
-
-
 with open("input.txt") as f:
 	lines = [i.split(' | ') for i in f.read().split('\n')[:-1]]
 	outputs = [i[1] for i in lines]
@@ -10,7 +8,6 @@ with open("input.txt") as f:
 
 	for i in outputs:
 		number_codes = i.split()
-
 
 		lens_to_look_for = [2, 3, 4, 7]
 		for code in number_codes:
