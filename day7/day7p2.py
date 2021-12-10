@@ -4,7 +4,7 @@ import numpy as np
 with open('input.txt', 'r') as f:
 
 	nums = list(map(int, f.read().split(',')))
-
+	f.close()
 	furthest = max(nums)
 	fuel_loads = [0] * furthest
 

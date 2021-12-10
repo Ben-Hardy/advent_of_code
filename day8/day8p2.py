@@ -8,6 +8,7 @@ def find_diff(str1, str2):
 
 with open("input.txt") as f:
 	lines = [i.split(' | ') for i in f.read().split('\n')[:-1]]
+	f.close()
 	inputs = [i[0].split() for i in lines]
 	output_codes = []
 

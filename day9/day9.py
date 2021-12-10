@@ -5,6 +5,9 @@ import numpy as np
 with open("input.txt", 'r') as f:
 	numbers = f.read().split('\n')[:-1]
 	numbers = [list(i) for i in numbers]
+
+	f.close()
+	
 	nums_as_ints = []
 	for row in numbers:
 		nums_as_ints.append([int(i) for i in row])

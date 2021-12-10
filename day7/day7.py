@@ -1,5 +1,6 @@
 with open('input.txt', 'r') as f:
 	nums = list(map(int, f.read().split(',')))
+	f.close()
 	print(nums)
 
 	furthest = max(nums)
