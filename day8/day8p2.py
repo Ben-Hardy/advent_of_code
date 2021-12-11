@@ -1,5 +1,5 @@
 
-# this helper function finds which letters are different between two input strings and returns them as a list
+# this helper function finds which letters are different between two strings and returns them as a list
 def find_diff(str1, str2):
 	s1 = set(str1)
 	s2 = set(str2)
@@ -29,7 +29,7 @@ with open("input.txt") as f:
 		one_index = lens.index(2)
 		ur_and_lr = cur_input[one_index]
 
-		# we can deduce top from 7, which has a code with three letters, two we already know:
+		# we can deduce top from 7, which has a code with three letters, two we already know from 1:
 		seven_idx = lens.index(3)
 		top = find_diff(ur_and_lr, cur_input[seven_idx])[0]
 
