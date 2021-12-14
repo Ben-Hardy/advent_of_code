@@ -1,7 +1,7 @@
 f = open("input.txt", "r")
 
 nums = f.read().split('\n')[:-1]
-
+f.close()
 num_rows = len(nums)
 num_cols = len(nums[0])
 
@@ -33,12 +33,14 @@ print(gamma_int * eps_int)
 
 # part 2: doing this in the same file to avoid just copying and pasting most of part 1
 
-def count_col(l, idx):
+
+def count_col(lst, idx):
 	total = 0
-	for i in l:
+	for i in lst:
 		if i[idx] == '1':
 			total += 1
 	return total
+
 
 ox_rating = nums.copy()
 co2_rating = nums.copy()
@@ -71,8 +73,7 @@ while len(co2_rating) != 1:
 
 	cur_col += 1
 
-co2_rating_int = int(co2_rating[0],2)
+co2_rating_int = int(co2_rating[0], 2)
 ox_rating_int = int(ox_rating[0], 2)
 
 print(co2_rating_int * ox_rating_int)
-

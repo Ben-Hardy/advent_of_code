@@ -97,6 +97,8 @@ def calculate_flashes(filename: str):
 			
 			day_count += 1
 		
+		print("Final result")
+		print(octopi)
 		print(day_count)
 
 
