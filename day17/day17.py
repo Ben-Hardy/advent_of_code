@@ -5,13 +5,13 @@ def launch_shot(x_v, y_v, x_tar, y_tar):
 	cur_pos_x = 0
 	cur_pos_y = 0
 	
-	trajectory = []
+	cur_traj = []
 	
-	x_far_edge = x_target[1] if x_target[1] > 0 else x_target[0]
-	y_far_edge = y_target[1] if y_target[1] > 0 else y_target[0]
+	x_far_edge = x_tar[1] if x_tar[1] > 0 else x_tar[0]
+	y_far_edge = y_tar[1] if y_tar[1] > 0 else y_tar[0]
 	
 	while cur_pos_x <= x_far_edge and cur_pos_y >= y_far_edge:
-		trajectory.append((cur_pos_x, cur_pos_y))
+		cur_traj.append((cur_pos_x, cur_pos_y))
 		cur_pos_x += x_v
 		cur_pos_y += y_v
 		if x_v > 0:
@@ -21,13 +21,14 @@ def launch_shot(x_v, y_v, x_tar, y_tar):
 		
 		y_v -= 1
 
-	return trajectory
+	return cur_traj
 
 
 # checks if any trajectory points hit the target. if one does, return the index of that point, otherwise return -1
 def traj_is_in_target(traj, x_tar, y_tar):
 	
 	for i in range(len(traj)):
+		# noinspection PyChainedComparisons
 		if (traj[i][0] >= x_tar[0] and traj[i][0] <= x_tar[1]) and (traj[i][1] >= y_tar[0] and traj[i][1] <= y_tar[1]):
 			return i
 	
@@ -47,34 +48,24 @@ y_target = sorted(y_target)
 _target = sorted(x_target)
 print(f'x coordinates: {x_target}\ny coordinates: {y_target}')
 
-# calculate the minimum x value needed to hit the target
-cur = 1
-calculated = False
-while not calculated:
-	if sum([i for i in range(cur)]) >= x_target[0]:
-		calculated = True
-	else:
-		cur += 1
-#print(f'Minimum x required: {cur}')
-
 x_vel = 21
 y_vel = 125
 # hahahaha brute forced it by plugging and chugging. not my finest hour
-
+# I knew it would be a near-maximum x value.
+# any x velocity over 22 always overshoots the target no matter the y.
+# nothing under 21 will make it to the target so I knew it had to be 21 or 22
+# from there I just kept upping y by 10 until it overshot then backed off until it hit again
 trajectory = launch_shot(x_vel, y_vel, x_target, y_target)
 
 
 # verify if this trajectory was within the target
 idx = traj_is_in_target(trajectory, x_target, y_target)
-#print(trajectory)
-if idx != -1:
-	# print(trajectory[:idx + 1])
-	pass
-else:
-	print('trajectory does not hit target')
-max_y = max([i[1] for i in trajectory])
 
-print(f'maximum height achieved: {max_y}')
+if idx == -1:
+	print('trajectory does not hit target')
+else:
+	max_y = max([i[1] for i in trajectory])
+	print(f'maximum height achieved: {max_y}')
 # part 2
 
 coords_that_work = []
@@ -83,7 +74,7 @@ for i in range(x_target[1] + 1):
 		trajectory = launch_shot(i, j, x_target, y_target)
 		idx = traj_is_in_target(trajectory, x_target, y_target)
 		if idx != -1:
-			coords_that_work.append((i,j))
+			coords_that_work.append((i, j))
 		trajectory = launch_shot(i, -1 * j, x_target, y_target)
 		idx = traj_is_in_target(trajectory, x_target, y_target)
 		if idx != -1:
