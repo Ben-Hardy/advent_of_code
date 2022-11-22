@@ -11,7 +11,7 @@ with open('input/input.txt') as f:
 	cur_h = 0
 	cur_w = 0
 	num_trees = 0
- 
+
 	while cur_h < height:
 		if hill[cur_h][cur_w] == '#':
 			num_trees += 1
