@@ -1,4 +1,4 @@
-with open('input/smallinput.txt') as f:
+with open('input/input.txt') as f:
 	lines = list(map(int, f.read().split('\n')))
 	numbers = sorted(lines)
 	not_found = True
@@ -15,3 +15,17 @@ with open('input/smallinput.txt') as f:
 	print(f"first: {numbers[start]}\nsecond: {numbers[-1]}\nproduct: {numbers[start] * numbers[-1]}")
 
 	# part 2
+	pairs = {}
+	numbers = sorted(lines)
+	for i in range(len(numbers) - 2):
+		for j in range(i, len(numbers) - 1):
+			if numbers[i] + numbers[j] < 2020 and numbers[i] != numbers[j]:
+				pairs[(numbers[i], numbers[j])] = numbers[i] + numbers[j]
+
+	print(pairs)
+
+	for p in pairs:
+		for num in numbers:
+			if pairs[p] + num == 2020:
+				print(f"The triplet {p[0]}, {p[1]}, and {num} equal 2020")
+				print(f"Their product is {p[0] * p[1] * num}")
