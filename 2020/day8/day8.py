@@ -26,7 +26,7 @@ with open('input/input.txt') as f:
 	is_looping = True
 
 	while is_looping:
-		print(f"Current instruction: {operations[idx].instruction} {operations[idx].sign}{operations[idx].number}")
+		#print(f"Current instruction: {operations[idx].instruction} {operations[idx].sign}{operations[idx].number}")
 		if operations[idx].was_used:
 			is_looping = False
 		elif operations[idx].instruction == 'nop':
@@ -45,7 +45,5 @@ with open('input/input.txt') as f:
 				idx += operations[idx].number
 			elif operations[idx].sign == '-':
 				idx -= operations[idx].number
-
-
 
 	print(f'Final accumulator amount: {acc}')

@@ -10,7 +10,7 @@ with open('input/input.txt') as f:
 		rule = parts[0].split()
 		bounds = list(map(int, rule[0].split("-")))
 
-		if password.count(rule[1]) >= bounds[0] and password.count(rule[1]) <= bounds[1]:
+		if bounds[0] <= password.count(rule[1]) <= bounds[1]:
 			good_passwords += 1
 
 	print(f"number of valid passwords: {good_passwords}")
