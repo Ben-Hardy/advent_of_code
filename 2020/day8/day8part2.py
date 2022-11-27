@@ -15,7 +15,6 @@ class Operation:
 def process_instructions(operations):
 	acc = 0
 	idx = 0
-
 	is_looping = True
 
 	while is_looping:
@@ -69,6 +68,7 @@ with open('input/input.txt') as f:
 		if result[1] != len(ops):
 			pass
 		else:
+			print(f"Bad instruction was \"{temp_ops[o]}\" at index {o}")
 			break
 	print(f"Final acc total: {result[0]}")
 	print(f"Final idx: {result[1]}")
