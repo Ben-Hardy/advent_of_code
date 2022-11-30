@@ -1,5 +1,5 @@
 
-def find_encoding_error(numbers: [int], preamble: int) -> int:
+def find_encoding_error(numbers, preamble):
 	# this being n^3 is painful but it's only for up to 25 numbers so it doesn't matter.
 	for i in range(preamble,len(numbers)):
 		prevs = sorted(numbers[i-preamble:i])
@@ -16,7 +16,7 @@ def find_encoding_error(numbers: [int], preamble: int) -> int:
 	return -1
 
 
-def find_range_nums(numbers: [int], total: int) -> (int, int):
+def find_range_nums(numbers, total):
 	max_idx = numbers.index(total)
 
 	for i in range(2, max_idx):

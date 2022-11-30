@@ -1,5 +1,5 @@
 
-def find_encoding_error(numbers: [int], preamble) -> int:
+def find_encoding_error(numbers, preamble):
 	# this being n^3 is painful but it's only for up to 25 numbers so it doesn't matter.
 	for i in range(preamble,len(numbers)):
 		prevs = sorted(numbers[i-preamble:i])
