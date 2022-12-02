@@ -17,6 +17,7 @@ else:
 	small_input_path = f"{input_dir}/smallinput.txt"
 	day_part_one = f"{directory}/day{day}.py"
 	day_part_two = f"{directory}/day{day}part2.py"
+	outline_path = f"{directory}/puzzle_outline.txt"
 
 	with open(input_path, 'x') as f:
 		print(f"{input_path} created!")
@@ -29,4 +30,7 @@ else:
 		f.close()
 	with open(day_part_two, 'x') as f:
 		print(f"{day_part_two} created!")
+		f.close()
+	with open(outline_path, 'x') as f:
+		print(f"{outline_path} created!")
 		f.close()
