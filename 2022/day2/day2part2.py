@@ -1,11 +1,8 @@
-# O(1) solution
 def score_pairing(pair):
 	opp, you = pair[0], pair[-1]
 
-	opp_choices = {'A': 0, 'B': 1, 'C': 2}
-	choices = {'X': 0, 'Y': 1, 'Z': 2}
-	opp_idx = opp_choices[opp]
-	you_idx = choices[you]
+	you_idx = 'XYZ'.index(you)
+	opp_idx = 'ABC'.index(opp)
 
 	# the table of outcome scores is modified to be what you should do rather than
 	# what choice you are making.
