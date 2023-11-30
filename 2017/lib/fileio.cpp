@@ -11,7 +11,7 @@ std::vector<std::string> read_file(std::string file_name) {
 
 	while (input_file) {
 		std::string file_line {};
-		input_file >> file_line;
+		std::getline(input_file, file_line);
 		file_contents.push_back(file_line);
 	}
 	
