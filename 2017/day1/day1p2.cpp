@@ -1,7 +1,7 @@
 #include "day1p2.hpp"
 
 void day1p2() {
-	std::vector<std::string> in_vec {read_file("p2input.txt")};
+	auto in_vec {read_file("p2input.txt")};
 
 	for (auto itr : in_vec) {
 		std::string num_list {itr};

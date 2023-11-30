@@ -4,7 +4,7 @@ void day1p1() {
 	std::vector<std::string> in_vec {read_file("p1input.txt")};
 
 	for (auto itr : in_vec) {
-		std::string num_list {itr};
+		auto num_list {itr};
 		std::cout << num_list << '\n';
 
 		if (num_list.size() > 0) {
