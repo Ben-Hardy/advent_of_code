@@ -4,6 +4,6 @@
 #include <vector>
 #include <format>
 
-#include "../lib/fileio.hpp"
+#include "../../lib/fileio.hpp"
 
 void p1();
