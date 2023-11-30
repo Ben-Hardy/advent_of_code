@@ -3,4 +3,4 @@
 #include <iostream>
 #include "../lib/fileio.hpp"
 
-void day1p2();
+void p2();

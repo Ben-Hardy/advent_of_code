@@ -18,3 +18,13 @@ std::vector<std::string> read_file(std::string file_name) {
 	return file_contents;
 }
 
+std::vector<std::string> split_string(std::string str) {
+	std::stringstream str_str(str);
+	std::vector<std::string> tokens {};
+	std::string token;
+	while (str_str >> token) {
+		tokens.push_back(token);
+	}
+
+	return tokens;
+}

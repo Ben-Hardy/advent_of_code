@@ -1,6 +1,9 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
+#include <format>
+
 #include "../lib/fileio.hpp"
 
-void day1p2();
+void p1();
