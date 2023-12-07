@@ -1,6 +1,5 @@
 with open('biginput.txt', 'r') as f:
 	lines = f.read().split('\n')[:-1]
-	print("\n".join(lines))
 
 	total = 0
 	num_winning_nums = 10
@@ -12,8 +11,6 @@ with open('biginput.txt', 'r') as f:
 		cur_card = int(chunks[1][:-1])
 
 		chunks = chunks[2:]
-		print(f"Processing card {cur_card}")
-		print(chunks)
 
 		winning_nums = [int(i) for i in chunks[:num_winning_nums]]
 		player_nums = [int(i) for i in chunks[num_winning_nums + 1:]]
@@ -25,6 +22,6 @@ with open('biginput.txt', 'r') as f:
 		if score > 0:
 			for i in range(card + 1, card + 1 + score):
 				card_counts[i] += card_counts[card]
-		print(f"Total: {sum(card_counts)}")
+	print(f"Total: {sum(card_counts)}")
 
 
