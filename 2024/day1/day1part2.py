@@ -9,5 +9,4 @@ with open('input/input.txt', 'r') as f:
 	
 	unique_nums = list(set(col1))
 	sim_scores = [unique_num * col2.count(unique_num) for unique_num in unique_nums]
-	print(sim_scores)
 	print(sum(sim_scores))
