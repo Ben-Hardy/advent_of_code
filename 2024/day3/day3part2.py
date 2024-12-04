@@ -2,7 +2,7 @@ import re
 
 
 def find_mul(in_str):
-	return sum(map(lambda x: x[0] * x[1], [list(map(int, i[4:-1].split(','))) for i in re.findall(r'mul\(\d+\,\d+\)', in_str)]))
+	return sum(map(lambda x: x[0] * x[1], [list(map(int, i[4:-1].split(','))) for i in re.findall(r'mul\(\d+,\d+\)', in_str)]))
 
 
 def process_str(line):
