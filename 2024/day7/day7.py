@@ -22,8 +22,11 @@ with open('input/input.txt', 'r') as f:
 			signs = list(combo)
 			cur_total = 0
 			while len(temp) > 1:
+				# treat numbers as a stack. when the stack has one element left, you're done
 				first = temp.pop(0)
 				second = temp.pop(0)
+				# also treat the sign list as a stack. since it has n-1 elements, it will empty exactly on the last
+				# calculation
 				cur_sign = signs.pop(0)
 				if cur_sign == '+':
 					temp.insert(0, first + second)
