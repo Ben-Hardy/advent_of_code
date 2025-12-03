@@ -1,4 +1,4 @@
-with open("input/smallinput.txt") as f:
+with open("input/input.txt") as f:
     data = f.read().split(",")
     total = 0
     counted = []
